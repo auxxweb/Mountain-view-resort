@@ -159,24 +159,24 @@
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form>
+                            <form  id="contactform" method="post">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                            <label for="subject">Subject</label>
+                                            <input type="number" class="form-control" id="phoneNumber" placeholder="Phone Number" required>
+                                            <label for="subject">Phone Number</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -186,7 +186,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button id="s-btn" class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button id="loading" style="display: none;" class="btn btn-primary w-100 py-3" type="button">Sending...</button>
                                     </div>
                                 </div>
                             </form>
@@ -346,6 +347,57 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+		$(document).ready(function () {
+		  $('#contactform').submit((e) => {
+			e.preventDefault()
+	  
+			// Validation
+			const name = $('#name').val().trim();
+			const email = $('#email').val().trim();
+			const phoneNumber = $('#phoneNumber').val().trim();
+			const message = $('#message').val().trim();
+			if (event.isDefaultPrevented()) {
+        // handle the invalid form...
+        formError();
+        submitMSG(false, "Did you fill in the form properly?");
+		return;
+	}else{
+		event.preventDefault();
+	}
+	  
+			const loading = document.getElementById('loading');
+			const btn = document.getElementById('s-btn');
+			const successMessage = document.getElementById('successMessage');
+	  
+			loading.style.display = 'block';
+			btn.style.display = 'none';
+	  
+			$.ajax({
+			  url:
+				'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
+			  data: $('#contactform').serialize(),
+			  method: 'post',
+			  success: function (response) {
+				if (successMessage) {
+				  successMessage.style.display = 'block';
+				}
+	  
+				// Clear form fields
+				$('#contactform')[0].reset();
+	  
+				btn.style.display = 'block';
+				loading.style.display = 'none';
+			  },
+			  error: function (err) {
+				loading.style.display = 'none';
+				btn.style.display = 'block';
+				alert('Something went wrong. Please try again.');
+			  },
+			});
+		  });
+		});
+	  </script> 
 </body>
 
 </html>
