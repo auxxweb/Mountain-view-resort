@@ -46,7 +46,9 @@
 
 .btn.btn-primary,
 .btn.btn-secondary {
-    color: #FFFFFF;
+    color: orange;
+    background-color: white;
+    
 }
 
 .btn-square {

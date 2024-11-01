@@ -43,48 +43,80 @@
         <!-- Spinner End -->
 
         <!-- Header Start -->
-        <div class="container-fluid  px-0">
-            <div class="row gx-0">
-                <div class="col-lg-3 d-none d-lg-block">
-                    <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <!-- <h1 class="m-0 text-primary text-uppercase">Mountain View Resort</h1> -->
+        <div class="container-fluid px-0">
+            <div class="row gx-0 align-items-center">
+                <!-- Logo (Visible on large screens only) -->
+                <div class="col-lg-3 d-none d-lg-flex align-items-center justify-content-center" style="margin-left: 550px;">
+                    <a href="index.html" class="navbar-brand w-100 m-0 p-0">
                         <img src="./img/logos/logo.png" style="width: 110px;">
-
                     </a>
-                </div>
-                <div class="col-lg-9">
                     
-                    <nav class="navbar navbar-expand-lg  navbar-dark p-3 p-lg-0">
-                        <a href="index.html" class="navbar-brand d-block d-lg-none">
-                            <img src="./img/logos/logo.png" style="width: 150px;">
+                <a href="index.html" style="margin-left: 350px;" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="room.html" class="nav-item nav-link">Rooms</a>
+                <a href="booking.html" class="nav-item nav-link">Gallery</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            
+                <a class="btn btn-social" style="color: orange;font-size: 30px; margin-left: 350px;" href="https://www.facebook.com/profile.php?id=100089729634259&mibextid=ZbWKwL">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a class="btn btn-social" style="color: orange;font-size: 30px;" href="https://www.instagram.com/kanjirakollimountainviewresort/profilecard/?igsh=MXhhMmZyZWFnYWtrZw==">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/9061759742" target="_blank" class="btn btn-primary rounded-0" style="display: flex; align-items: center; gap: 5px;border-color: white;">
+                    <i class="fab fa-whatsapp" style="font-size: 32px; margin-top: -6px;"></i>
+                </a>
+                </div>
+        
+                <!-- Logo, Social Icons, and Toggler for Small Screens -->
+                <div class="col-lg-9 d-flex justify-content-between align-items-center p-3 p-lg-0">
+                    <!-- Logo (Visible on small screens only) -->
+                    <a href="index.html" class="navbar-brand d-lg-none">
+                        <img src="./img/logos/logo.png" style="width: 110px;">
+                    </a>
+        
+                    <!-- Social Icons (Visible on all screen sizes) -->
+                    <div class="d-flex align-items-center d-lg-none" style="margin-top: 10px; margin-left: 40px;">
+                        <a class="btn btn-social" style="color: orange;font-size: 20px;" href="https://www.facebook.com/profile.php?id=100089729634259&mibextid=ZbWKwL">
+                            <i class="fab fa-facebook"></i>
                         </a>
-                        <button type="button" style="background-color: #110554" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav mr-auto py-0">
-                                <a href="index.html" class="nav-item nav-link ">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <!-- <a href="service.html" class="nav-item nav-link">Services</a> -->
-                                <a href="room.html" class="nav-item nav-link active">Rooms</a>
-                                <a href="booking.html" class="nav-link ">Gallery</a>
-                                <!-- <div class="nav-item dropdown">
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">Booking</a>
-                                        <a href="team.html" class="dropdown-item">Our Team</a>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    </div>
-                                </div> -->
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                            </div>
-                            <a href="https://wa.me/9061759742" target="_blank" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">
-                                <i class="fab fa-whatsapp" style="font-size: 24px; width:50px;"></i>Chat on WhatsApp
-                            </a>
-                        </div>
-                    </nav>
+                        <a class="btn btn-social" style="color: orange; margin-left: -10px;font-size: 20px;" href="https://www.instagram.com/kanjirakollimountainviewresort/profilecard/?igsh=MXhhMmZyZWFnYWtrZw==">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/9061759742" target="_blank" class="btn btn-primary rounded-0" style="display: flex; align-items: center; margin-left: -10px;border-color: white;">
+                            <i class="fab fa-whatsapp" style="font-size: 20px;margin-top: -7px;"></i>
+                        </a>
+                    </div>
+        
+                    <!-- Toggler Button (Visible only on small screens) -->
+                    <!-- <button type="button" class="navbar-toggler d-lg-none" style="background-color: #110554; border: none;" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon" style="color: white;"></span>
+                    </button> -->
+                    <nav class="navbar navbar-expand-lg  navbar-light p-3 p-lg-0">
+                    <button type="button" style="color: #110554" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+                </div>
+            </div>
+        
+            <!-- Navigation Links for Large Screens -->
+            
+        
+            <!-- Collapsible Navbar for Small Screens -->
+            <div class="collapse navbar-collapse d-lg-none" id="navbarCollapse">
+                <div class="navbar-nav text-center mt-2">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="room.html" class="nav-item nav-link">Rooms</a>
+                    <a href="booking.html" class="nav-item nav-link">Gallery</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
         </div>
+        
+        <!-- Header End -->
+
         <!-- Header End -->
 
 
@@ -331,7 +363,7 @@
 							</p>
                         </div>
                     </div> -->
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-6">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Meeshakkavala,Kanjirakkolli</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>8590088552</p>
@@ -343,7 +375,7 @@
                             <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> -->
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-12">
+                    <div class="col-lg-6 col-md-12">
                         <div class="row gy-5 g-4">
                             <div class="col-md-6">
                                 <h6 class="section-title text-start text-primary text-uppercase mb-4">Resort</h6>
